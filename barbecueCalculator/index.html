@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+    <title>Churrascômetro</title>
+</head>
+
+<body id="body">
+    <img class="background" src="./assets/img/Churrasqueira.png" alt="Grill">
+    <img class="logo" src="./assets/img/bar.png" alt="logo">
+    
+
+    <section class="calculator">
+
+        <div class="input">
+            <label for="inAdult">Quantidade de Adultos</label>
+            <input type="number" name="adult" id="inAdult" required placeholder="Adultos">
+
+        </div>
+
+        <div class="input">
+            <label for="inKids">Quantidade de Crianças</label>
+            <input type="number" name="kids" id="inKids" required placeholder="Crianças">
+        </div>
+
+        <div class="input">
+            <label for="inHour">Quantidade de Horas</label>
+            <input type="number" name="hour" id="inHour" required placeholder="Horas">
+        </div>
+
+        <div class="input">
+            <input type="submit" value="Calcular"id="btCalculator">
+            <input type="submit" value="Calcular Novamente" id="btTryAgain" class="hide">
+        </div>
+
+        <div id="outInformation" class="outInformation"></div>
+    </section>
+
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
