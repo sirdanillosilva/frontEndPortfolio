@@ -2,12 +2,9 @@ const searchInput = document.querySelector("#search-input");
 const firstSearch = document.querySelector("#search-btn");
 const secondSearch = document.querySelector("#lucky-input");
 
-console.log(searchInput)
-console.log(firstSearch)
-console.log(secondSearch)
 
 searchInput.addEventListener("keydown", function (event) {
-    if (event.code === "Enter") {
+    if(event.code === 'Enter' || event.which === 13 || event.key === 'Enter') {
         search();
     }
 });
