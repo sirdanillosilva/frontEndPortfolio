@@ -1,0 +1,47 @@
+
+@media screen and (max-width: 991px) {
+
+    .header-dektop {
+        display: none;
+    }
+
+    .header-mobile {
+        position: relative;
+        box-sizing: border-box;
+        padding: 1rem 0;
+    }
+
+    .header-logo {
+        display: inline-block;
+        width: 64px;
+    }
+
+    .header-menu {
+        display: inline-block;
+        width: 30px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+}
+
+@media screen and (min-width:992px) {
+    .header-mobile {
+        display: none;
+    }
+
+    .header-dektop{
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .header-dektop ul, .header-dektop ul li, .header-dektop ul li a{
+        display: inline-block;
+    }
+
+    .header-dektop li{
+        margin: 0 2rem;
+    }
+}

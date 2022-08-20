@@ -1,0 +1,101 @@
+@media screen and (min-width: 270px) {
+
+    /* Banner inicial */
+    .banner-agendamento {
+        box-sizing: border-box;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/agendamento.png);
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        height: 200px;
+    }
+
+    .banner-agendamento h1 {
+        color: white;
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 4rem;
+    }
+
+
+    /* Formulário */
+
+    #agendamento div.form{
+        margin-bottom: 1rem;
+    }
+
+    #agendamento input[type=text], #agendamento input[type=tel], #agendamento input[type=email], #agendamento input[type=number] {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border: 1px solid black;
+        
+    }
+
+    #agendamento input[type=radio]{
+        margin: 1rem .5rem 1rem 0;
+    }
+
+
+    input[type='radio']:after {
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #909090;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 5px solid rgb(192, 192, 192);
+    }
+
+    input[type='radio']:checked:after {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: black;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 5px solid rgb(192, 192, 192);
+    }
+
+    #agendamento{
+        margin: 2rem auto 4rem
+    }
+
+    #agendamento h2{
+        font-weight: 700;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #agendamento .agendamento-title span{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    #agendamento-form textarea{
+        width: 100%;
+    }
+
+    #agendamento .button input[type=submit]{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: black;
+        height: 3rem;
+        max-width: 16rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+

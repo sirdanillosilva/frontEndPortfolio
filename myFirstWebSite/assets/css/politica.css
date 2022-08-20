@@ -1,0 +1,48 @@
+    /* Banner inicial */
+    .banner-politica {
+        box-sizing: border-box;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/politica.png);
+        background-position: center;
+        background-repeat: none;
+        background-size: cover;
+        height: 200px;
+    }
+
+    .banner-politica h1 {
+        color: white;
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 4rem;
+    }
+
+    #politica .text{
+        box-sizing: border-box;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    #politica .text h2{
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    #politica .text h3{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    #politica .text p{
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    #politica .text ul, #politica .text li {
+        list-style-type: disc;
+        list-style: inside;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+    }

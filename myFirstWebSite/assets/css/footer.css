@@ -1,0 +1,256 @@
+@media screen and (max-width: 600px) {
+    footer {
+        background-color: #F5F5F5;
+        padding-top: 2rem;
+    }
+
+    /* Logo footer */
+    .logo-footer {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .title-logo-footer {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 1rem;
+    }
+
+    .title-logo-footer h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    /* Links footer */
+
+    .links-footer {
+        font-size: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .link-left-footer {
+        display: block;
+    }
+
+    .link-right-footer {
+        display: block;
+    }
+
+    .link-left-footer ul>li,
+    .link-right-footer ul>li {
+        margin-bottom: 1rem;
+        list-style: disc;
+        list-style: inside;
+    }
+
+
+    /* Form footer */
+
+    div.form-footer {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    div.form-footer h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: .375rem;
+    }
+
+    div.form-footer p {
+        margin-bottom: 1rem;
+    }
+
+    div.form-footer input {
+        display: block;
+        width: 100%;
+        height: 2rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    div.form-footer input[type=submit] {
+        width: 50%;
+        border: none;
+        border-radius: 5px;
+        height: 3rem;
+        background-color: #30ABD2;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    div.center-footer {
+        text-align: center;
+    }
+
+    div.social-footer h2 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    div.social-footer img {
+        width: 1.5rem;
+        margin: 1rem 0.75rem 2rem 0.75rem;
+    }
+
+    /* COPYRIGHT */
+    div.copyright {
+        background-color: black;
+        color: white;
+        padding: .375rem 0;
+        font-size: 12px;
+        text-align: center;
+
+
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    footer {
+        background-color: #F5F5F5;
+        padding-top: 2rem;
+    }
+
+    /* Logo footer */
+    .logo-footer {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .title-logo-footer {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 1rem;
+    }
+
+    .title-logo-footer h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+
+    /* Links footer */
+    .link-left-footer {
+        display: inline-block;
+    }
+
+    .link-left-footer ul li,
+    .link-right-footer ul li {
+        margin-bottom: 1rem;
+        list-style: disc;
+        list-style: inside;
+        font-size: 1rem;
+
+    }
+
+    .link-right-footer {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5rem;
+    }
+
+
+    /* Form footer */
+    div.form-footer {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    div.form-footer h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: .375rem;
+    }
+
+    div.form-footer p {
+        margin-bottom: 1rem;
+    }
+
+    div.form-footer input {
+        display: block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        height: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    div.form-footer input::placeholder{
+        padding: 0 5px;
+     }
+
+    div.form-footer input[type=submit] {
+        width: 50%;
+        border: none;
+        border-radius: 5px;
+        height: 3rem;
+        background-color: #30ABD2;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    div.center-footer {
+        text-align: center;
+    }
+
+    div.social-footer h2 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    div.social-footer img {
+        width: 32px;
+        margin: 1rem 0.75rem 2rem 0.75rem;
+    }
+
+    /* COPYRIGHT */
+    div.copyright {
+        background-color: black;
+        color: white;
+        padding: .375rem 0;
+        font-size: 12px;
+        text-align: center;
+
+
+    }
+
+}
+
+
+@media screen and (min-width:992px) {
+    .container-footer-general {
+        width: 100%;
+        padding: 0 5px;
+        position: relative;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .containerFooter {
+        box-sizing: border-box;
+        width:100%;
+        overflow: hidden;
+    }
+
+    .left {
+        width:50%;
+        float: left;
+    }
+
+    .right {
+        width: 50%;
+        float: left;
+    }
+
+    div.form-footer {
+        margin-top: .5rem;
+    }
+}

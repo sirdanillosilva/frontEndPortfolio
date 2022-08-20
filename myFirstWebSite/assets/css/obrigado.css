@@ -1,0 +1,68 @@
+.banner{
+    background-color: black;
+}
+.banner-container{
+
+    color: white;
+    height: 10rem;
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.banner-container .title{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.banner-container .title h1{
+    color: #30ABD2;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner-container  .title p{
+    font-size: 1rem;
+    font-weight: 400;
+    width: 80%;
+}
+
+.confirmation{
+    margin: 2rem auto;
+}
+.confirmation h2, .doubt h2{
+   font-size: 2.25rem;
+   font-weight: 700;
+}
+
+.confirmation img, .confirmation p, .confirmation h2, .doubt h2, .doubt p{
+    margin-bottom: 2rem;
+}
+
+div button.whatsapp-button{
+    margin-top: 5rem;
+}
+
+div button.gray-button{
+    margin-bottom: 5rem;
+}
+
+
+
+div button.whatsapp-button, button.gray-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+div.copyright {
+    background-color: black;
+    color: white;
+    padding: .375rem 0;
+    font-size: 12px;
+    text-align: center;
+}
