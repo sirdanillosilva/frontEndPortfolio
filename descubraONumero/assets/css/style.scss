@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    @include flex-column();
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    @include flex-column();
+    width: calc(100% - 40px);
+    max-width: 400px;
+
+    .container-game {
+        width: 100%;
+
+        .header {
+            @include flex();
+            justify-content: space-between;
+            height: 2rem;
+            background-color: gray;
+            border-radius: 5px 5px 0 0;
+            padding: 0 20px;
+
+
+            button {
+                background: transparent;
+                cursor: pointer;
+                width: 20%;
+                border-radius: 5px;
+                border: 1px solid black;
+                background-color: white;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+
+                &:disabled {
+                    background-color: lightgray;
+                    color: gray;
+                    cursor: auto;
+                }
+            }
+        }
+
+
+        .game {
+            background-color: lightgray;
+            border-radius: 0 0 5px 5px;
+            height: 350px;
+
+            .bet {
+                @include flex-column();
+                width: 100%;
+                padding: 0 20px;
+                margin-bottom: 2rem;
+
+
+                h1 {
+                    font-size: 1.5rem;
+                    margin: 1rem 0;
+                }
+
+                input {
+                    width: calc(100%);
+                    height: 50px;
+                    border: 1px solid gray;
+                    border-bottom: none;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    outline: none;
+                }
+
+                button {
+                    background-color: black;
+                    color: white;
+                    font-size: 1rem;
+                    width: calc(100%);
+                    height: 50px;
+                    border: 1px solid gray;
+                    border-top: none;
+                    cursor: pointer;
+
+                    &:disabled {
+                        background-color: lightgray;
+                        color: gray;
+                        cursor: auto;
+                    }
+                }
+
+                .btnTryAgain {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                }
+            }
+        }
+
+        .information {
+            width: 100%;
+            padding: 0 20px 20px 20px;
+
+            .wrong {
+                margin-bottom: 1rem;
+
+                h3 {
+                    font-size: 1rem;
+                }
+            }
+
+            .chances {
+                margin-bottom: 1rem;
+
+                h3 {
+                    font-size: 1rem;
+                }
+            }
+
+            .tip {
+                h3 {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+
+        .gear {
+            background-color: lightgray;
+            border-radius: 0 0 5px 5px;
+            width: 100%;
+            padding: 20px 20px;
+            height: 350px;
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+
+            .nivel {
+                @include flex-column();
+                align-items: flex-start;
+
+                .choice-level {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .help {
+            background-color: lightgray;
+            border-radius: 0 0 5px 5px;
+            width: 100%;
+            padding: 20px 20px;
+            margin-bottom: 2rem;
+            height: 350px;
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+
+        }
+    }
+}
+
+
+
+.off {
+    display: none;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cb8debad3c.js" crossorigin="anonymous"></script>
+    <title>Descubra o Número</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container-game ">
+            <div class="header">
+                <button type="button" id="play"><i class="fa-solid fa-play"></i></button>
+                <button type="button" id="menu-gear" disabled><i class="fa-solid fa-gear"></i></button>
+                <button type="button" id="menu-help"><i class="fa-solid fa-circle-question"></i></button>
+            </div>
+
+            <div class="game" id="game">
+                <div class="bet">
+                    <h1>Adivinhe o número!</h1>
+                    <input type="number" name="userBet" id="userBet">
+                    <button class="btnBet" id="btnBet">Apostar!</button>
+                    <button class="btnBet btnTryAgain" id="btnTryAgain">Jogar Novamente!</button>
+                </div>
+
+                <div class="information">
+                    <div class="wrong">
+                        <h3 id="outWrong">Erros:(...)</h3>
+
+                    </div>
+                    <div class="chances">
+                        <h3 id="outChances">Chances Restantes: 6</h3>
+
+                    </div>
+
+                    <div class="tip">
+                        <h3 id="outTip">Dica: É um número entre 1 e 100</h3>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="gear off" id="gear">
+                <h3>Nível</h3>
+                <div class="nivel">
+                    <div class="choice-level">
+                        <input type="radio" name="nivel" id="easy" checked><span>Fácil</span>
+                    </div>
+                    <div class="choice-level">
+                        <input type="radio" name="nivel" id="mid"><span>Intermediário</span>
+                    </div>
+                    <div class="choice-level">
+                        <input type="radio" name="nivel" id="hard"><span>Difícil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help off" id="help">
+                <div class="ajuda">
+                    <h3>Sobre o Jogo</h3>
+                    <p>Você precisa ser esperto e rápido na sua jogada!
+                        Essa é a única forma de ganhar esse jogo.
+                        Use as dicas ao seu favor e esteja pronto para chegar ao prêmio de vencedor da rodada!
+                    </p>
+
+                    <p>
+                        Você terá apenas 6 tentativas para descobrir o número então preste muita atenção nas dicas
+                        quer eu vou te dar.
+
+                        A cada jogada você terá direito a uma dica. A dica vai dizer se você está perto do número oculto
+                        ou longe.
+                    </p>
+
+                    <p>
+                        Aprenda com seus erro! Veja qual número você já jogou e se está longe do número oculto.
+                        Boa sorte!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
