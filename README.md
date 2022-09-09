@@ -1,2 +1,2 @@
 # frontEndPortfolio
-Repositório dedicado aos projetos do meu portfólio frontEnd
+🚧Projeto Readme.md em construção, DeadLine = 12/9🚧 
