@@ -1,119 +1,106 @@
 * {
-    box-sizing: border-box;
-    font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-    background-image: linear-gradient(to top, black, #543317);
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+  background-image: linear-gradient(to top, black, #543317);
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-img.background {
-    width: 80%;
-    height: auto;
-    position: fixed;
-    right: 0;
-    z-index: -1;
-
+.background {
+  width: 80%;
+  height: auto;
+  position: fixed;
+  right: 0;
+  z-index: -1;
 }
 
-
-img.logo {
-    display: block;
-    width: 150px;
-    margin: 1rem auto;
+.logo {
+  display: block;
+  width: 150px;
+  margin: 1rem auto;
 }
 
 section.calculator {
-    display: block;
-    margin: auto;
-    border-radius: 10px;
-    background-color: #FFDE59;
-    width: calc(100% - 40px);
-    max-width: 500px;
-    padding: .25rem 0 2rem 0;
-    z-index: 9999;
-
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  background-color: #FFDE59;
+  width: calc(100% - 40px);
+  max-width: 500px;
+  padding: 0.25rem 0 2rem 0;
+  z-index: 9999;
 }
 
-div.input,
 div.outInformation {
-    margin: 1rem auto;
-    width: 80%;
+  margin: 1rem auto;
+  width: 80%;
+}
+div.outInformation p {
+  display: inline-block;
+  margin: 10px;
 }
 
-label {
-    display: block;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 5px;
+.input {
+  margin: 1rem auto;
+  width: 80%;
+}
+.input label {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.input input[type=Number] {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
-input[type=Number] {
-    display: block;
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 10px;
+button {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
 }
-
-input[type=submit] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-    cursor: pointer;
+button:hover {
+  background-color: rgb(189, 189, 189);
 }
-
-input[type=submit]:hover {
-    background-color: rgb(189, 189, 189);
+button.hide {
+  display: none;
 }
-
-input.hide {
-    display: none;
-}
-
-input.show {
-    display: inline-block;
-}
-
-#outInformation p {
-    display: inline-block;
-    margin: 10px;
+button.show {
+  display: inline-block;
 }
 
 @media screen and (min-width: 450px) {
-
-    img.background {
-        width: 70%;
-        height: auto;
-        position: fixed;
-        right: 0;
-    }
-
+  img.background {
+    width: 70%;
+    height: auto;
+    position: fixed;
+    right: 0;
+  }
 }
-
 @media screen and (min-width: 600px) {
-
-    img.background {
-        width: 55%;
-        height: auto;
-        position: fixed;
-        right: 0;
-    }
-
+  img.background {
+    width: 55%;
+    height: auto;
+    position: fixed;
+    right: 0;
+  }
 }
-
 @media screen and (min-width: 992px) {
-
-    img.background {
-        width: 40%;
-        height: auto;
-        position: fixed;
-        right: 0;
-    }
-
-}
+  img.background {
+    width: 40%;
+    height: auto;
+    position: fixed;
+    right: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
