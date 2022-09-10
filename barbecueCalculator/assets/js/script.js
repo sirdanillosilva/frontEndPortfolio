@@ -2,13 +2,8 @@
 // Cerveja - 1,2L Por pessoa, se o churrasco passar de 6 horas de duração será 2L
 // Bebidas - 1L Por pessoa, se o churrasco passar de 6 horas de duração será 1,5L
 // Crianças valem por 0.5 pessoa
-var windowHeight = window.innerHeight
-var screenCalc = (windowHeight + 100).toString()
-var screen = screenCalc+'px'
-
 
 function barbecueCalculator() {
-    document.getElementById('body').style.height = screen
     let inAdult = document.getElementById('inAdult')
     let adult = Number(inAdult.value)
 
