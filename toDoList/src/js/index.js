@@ -2,20 +2,7 @@ let allTask = [];
 let finishTask = [];
 let todoTask = [];
 
-class Task {
-  title;
-  date;
-  tag;
-  description;
-  idTask;
-  constructor(title, date, tag, description, idTask) {
-    this.title = title;
-    this.date = date;
-    this.tag = tag;
-    this.description = description;
-    this.idTask = idTask;
-  }
-}
+import Task from './Task.js';
 
 const addTask = document.querySelector(".btn-new-task");
 const closeModal = document.querySelector(".close");
@@ -28,11 +15,6 @@ const taskDescription = document.querySelector("#task-description");
 const btnTaskCreator = document.querySelector("#btn-create-task");
 
 const taskSection = document.querySelector("#task-container");
-const taskCard = document.querySelectorAll(".task");
-const taskCardDisable = document.querySelector(".done");
-const btnDoneTask = document.querySelectorAll(".done-button");
-const btnEditTask = document.querySelectorAll(".edit-button");
-const btnCancelTask = document.querySelectorAll(".cancel-button");
 
 function makeid(length) {
   let result = "";
