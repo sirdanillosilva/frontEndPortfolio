@@ -1,0 +1,182 @@
+$white: #f8f8f2;
+$gray: #44475a;
+$Background: #282a36;
+$blue: #6272a4;
+$pink: #ff79c6;
+$disable:#a6a7aa;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $Background;
+ 
+}
+
+h1 {
+  margin: 2rem;
+  color: $pink;
+  font-weight: 900;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.container {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  padding: 1.25rem;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 1.25rem;
+}
+
+.closeList{
+    display: none;
+}
+
+#closeModal{
+    display: none;
+}
+
+.modalDialog {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: hsla(231, 15%, 18%, 0.8);
+}
+
+.modalDialog { 
+  div {
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    margin: 10% auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background: $white;
+    h2{
+      margin: 0rem 0 1rem 0;
+      color: $gray;
+      text-transform: uppercase;
+    }
+
+    input, select, button{
+      margin-bottom: .75rem;
+      height: 2rem;
+      padding: 5px;
+      outline: none;
+    }
+
+    textarea{
+      margin-bottom: .75rem;
+      padding: 5px;
+      outline: none;
+    }
+    .close {
+      background: $gray;
+      color: $white;
+      line-height: 25px;
+      position: absolute;
+      right: -12px;
+      text-align: center;
+      top: -10px;
+      width: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      box-shadow: 1px 1px 3px $gray;
+      &:hover { background: $pink;
+      color: $gray; }
+  }}
+}
+
+  button {
+    background-color: $blue;
+    color: $white;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      background-color: $pink;
+      color: $gray;
+    }
+}
+
+.task{
+    background-color: $white;
+    border-radius: 5px;
+    color: $gray;
+    min-height: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    h3{
+      flex: 0.9;
+      cursor: pointer;
+      font-size: 1rem;
+      color: $gray;
+    }
+    .tag{
+      text-align: center;
+      color: $white;
+      background-color: $pink;
+      padding: 2px;
+      border-radius: 5px;
+      width: 5rem;
+    }
+    p{
+      margin-right: 1rem;
+      font-size: 0.9rem;
+    }
+    button{
+      min-width: 2rem;
+      min-height: 2rem;
+      margin: .125rem;;
+    }
+  
+}
+
+.task:last-child{
+  margin-bottom: 0rem;
+}
+
+.done{
+  background-color: $gray;
+  h3{
+    color: $white;
+    text-decoration: line-through;
+  }
+  p{
+    color: $white;
+  }
+
+  .disable-button
+        {
+        cursor:default;
+        // pointer-events: none;
+        color: $disable;
+        background-color: $white;
+
+        }
+}

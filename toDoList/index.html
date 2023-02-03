@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/src/img/timer_1225.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/cb8debad3c.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TO-DO LIST</title>
+  </head>
+  <body class="flex align-center">
+    <h1>TO-DO LIST</h1>
+
+    <section class="container flex">
+      <button class="btn-new-task">Add new task</button>
+    </section>
+
+    <section id="task-container" class="container flex task-container">
+      <!-- local do todo list -->
+    </section>
+
+    <div id="closeModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Add new task</h2>
+        <form class="task-card flex">
+          <input
+            id="task-title"
+            type="text"
+            placeholder="O que tu vai fazer hoje?"
+          />
+
+          <input id="task-date" type="date" />
+
+          <select id="task-tag">
+            <option>Altissima</option>
+            <option>Alta</option>
+            <option>Normal</option>
+            <option>Baixa</option>
+          </select>
+
+          <textarea
+            name=""
+            id="task-description"
+            cols="30"
+            rows="5"
+            placeholder="Deixa fluir as palavras aqui"
+          ></textarea>
+          <button id="btn-create-task" type="submit">Adicionar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>

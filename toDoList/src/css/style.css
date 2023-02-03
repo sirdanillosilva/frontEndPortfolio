@@ -1,0 +1,168 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #282a36;
+}
+
+h1 {
+  margin: 2rem;
+  color: #ff79c6;
+  font-weight: 900;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.container {
+  width: calc(100% - 2rem);
+  max-width: 900px;
+  padding: 1.25rem;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 1.25rem;
+}
+
+.closeList {
+  display: none;
+}
+
+#closeModal {
+  display: none;
+}
+
+.modalDialog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: hsla(231deg, 15%, 18%, 0.8);
+}
+
+.modalDialog div {
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  margin: 10% auto;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background: #f8f8f2;
+}
+.modalDialog div h2 {
+  margin: 0rem 0 1rem 0;
+  color: #44475a;
+  text-transform: uppercase;
+}
+.modalDialog div input, .modalDialog div select, .modalDialog div button {
+  margin-bottom: 0.75rem;
+  height: 2rem;
+  padding: 5px;
+  outline: none;
+}
+.modalDialog div textarea {
+  margin-bottom: 0.75rem;
+  padding: 5px;
+  outline: none;
+}
+.modalDialog div .close {
+  background: #44475a;
+  color: #f8f8f2;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #44475a;
+}
+.modalDialog div .close:hover {
+  background: #ff79c6;
+  color: #44475a;
+}
+
+button {
+  background-color: #6272a4;
+  color: #f8f8f2;
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 2px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff79c6;
+  color: #44475a;
+}
+
+.task {
+  background-color: #f8f8f2;
+  border-radius: 5px;
+  color: #44475a;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.task h3 {
+  flex: 0.9;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #44475a;
+}
+.task .tag {
+  text-align: center;
+  color: #f8f8f2;
+  background-color: #ff79c6;
+  padding: 2px;
+  border-radius: 5px;
+  width: 5rem;
+}
+.task p {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+.task button {
+  min-width: 2rem;
+  min-height: 2rem;
+  margin: 0.125rem;
+}
+
+.task:last-child {
+  margin-bottom: 0rem;
+}
+
+.done {
+  background-color: #44475a;
+}
+.done h3 {
+  color: #f8f8f2;
+  text-decoration: line-through;
+}
+.done p {
+  color: #f8f8f2;
+}
+.done .disable-button {
+  cursor: default;
+  color: #a6a7aa;
+  background-color: #f8f8f2;
+}/*# sourceMappingURL=style.css.map */
