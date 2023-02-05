@@ -1,19 +1,21 @@
-let allTask = [];
+let allTask = baixarLista();
 let finishTask = [];
 let todoTask = [];
 
-import Task from './Task.js';
+import { Task } from "./Task.js";
+import { modalEditTask } from "./components/modalEditTask.js";
 
-const addTask = document.querySelector(".btn-new-task");
-const closeModal = document.querySelector(".close");
+const btnAddNewTask = document.querySelector("#btn-add-task");
+const btnCloseModalAddNewTask = document.querySelector("#close-modal-add-task");
 
-const modal = document.querySelector(".modalDialog");
+const modalAddTask = document.querySelector(".add-task-modal");
 const taskTitle = document.querySelector("#task-title");
 const taskDate = document.querySelector("#task-date");
 const taskTag = document.querySelector("#task-tag");
 const taskDescription = document.querySelector("#task-description");
 const btnTaskCreator = document.querySelector("#btn-create-task");
 
+const body = document.querySelector("body");
 const taskSection = document.querySelector("#task-container");
 
 function makeid(length) {
@@ -33,17 +35,19 @@ const resetValue = () => {
   taskTitle.value = "";
   taskDate.value = "";
   taskTag.value = "";
-  taskDescription.value = "";
 };
 
-const clickAddNewTask = addTask.addEventListener("click", () => {
-  modal.id = "";
+const clickAddNewTask = btnAddNewTask.addEventListener("click", () => {
+  modalAddTask.id = "";
   resetValue();
 });
 
-const clickCloseModal = closeModal.addEventListener("click", () => {
-  modal.id = "closeModal";
-});
+const clickCloseAddTaskModal = btnCloseModalAddNewTask.addEventListener(
+  "click",
+  () => {
+    modalAddTask.id = "closeModal";
+  }
+);
 
 const verifyBoard = () => {
   if (allTask.length == 0) {
@@ -55,49 +59,61 @@ const verifyBoard = () => {
     taskSection.classList.add("task-container");
   }
 };
-
 verifyBoard();
-const createBoard = (title, tag, due, idTask) => {
+
+const createBoard = (item) => {
   const cardTask = document.createElement("div");
   cardTask.classList.add("task");
-  cardTask.id = idTask;
+  cardTask.id = `item-${item.idTask}`;
 
   const CardTitle = document.createElement("h3");
-  CardTitle.innerText = title.value;
+  CardTitle.innerText = item.title;
 
   const CardTag = document.createElement("p");
   CardTag.classList.add("tag");
-  CardTag.innerText = tag.value;
+  CardTag.innerText = item.tag;
 
   const CardDate = document.createElement("p");
   CardDate.classList.add("due-date");
-  CardDate.innerText = due.value;
+  CardDate.innerText = item.date;
 
   const doneBtn = document.createElement("button");
   doneBtn.classList.add("disable-button");
   doneBtn.classList.add("done-button");
   doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+  doneBtn.addEventListener("click", function (e) {
+    terminarAtividade(item);
+  });
 
   const editBtn = document.createElement("button");
   editBtn.classList.add("disable-button");
   editBtn.classList.add("edit-button");
+  editBtn.classList.add("hard-disable-button");
+  editBtn.id = "btn-edit-task";
   editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+  editBtn.addEventListener("click", () => {
+    editarAtividade(item);
+  });
+  editBtn.addEventListener("click", function (e) {});
 
-  const cancelBtn = document.createElement("button");
-  cancelBtn.classList.add("cancel-button");
-  cancelBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  const botaoExcluirTask = document.createElement("button");
+  botaoExcluirTask.classList.add("cancel-button");
+  botaoExcluirTask.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  botaoExcluirTask.addEventListener("click", function (e) {
+    excluirItemLista(item.idTask);
+  });
 
   cardTask.appendChild(CardTitle);
   cardTask.appendChild(CardTag);
   cardTask.appendChild(CardDate);
   cardTask.appendChild(doneBtn);
   cardTask.appendChild(editBtn);
-  cardTask.appendChild(cancelBtn);
+  cardTask.appendChild(botaoExcluirTask);
   taskSection.appendChild(cardTask);
 };
 
-const filledTask = (title, task, tag) => {
-  if (title.value && task.value && tag.value) return true;
+const filledTask = (item) => {
+  if (item.title !== "" && item.date !== "" && item.tag !== "") return true;
 };
 
 const creatNewTask = btnTaskCreator.addEventListener("click", (e) => {
@@ -107,35 +123,148 @@ const creatNewTask = btnTaskCreator.addEventListener("click", (e) => {
     taskTitle.value,
     taskDate.value,
     taskTag.value,
-    taskDescription.value,
     idTask
   );
-
-  const completeTask = filledTask(taskTitle, taskDate, taskTag);
+  const completeTask = filledTask(userTask);
 
   if (completeTask) {
     allTask.push(userTask);
-    createBoard(taskTitle, taskTag, taskDate, idTask);
+    createBoard(userTask);
     verifyBoard();
     resetValue();
+    salvarLista();
   } else {
     alert("Preencha a tarefa!");
   }
 });
 
-document.addEventListener("click", (e) => {
-  const targetElement = e.target;
-  const parentElement = targetElement.closest("div");
+function terminarAtividade(item) {
+  const itemFinalizado = document.querySelector(`#item-${item.idTask}`);
+  itemFinalizado.classList.toggle("done");
 
+  allTask.map((task) => {
+    if (task.idTask == item.idTask) {
+      if (task.done === false) {
+        task.done = true;
+      } else {
+        task.done = false;
+      }
+    }
+  });
+  salvarLista();
+}
 
-  if (targetElement.classList.contains("done-button")) {
-    parentElement.classList.toggle("done");
+function excluirItemLista(id) {
+  allTask = allTask.filter((item) => {
+    return item.idTask !== id;
+  });
+
+  const itemRemovido = document.querySelector(`#item-${id}`);
+  itemRemovido.remove();
+  salvarLista();
+  verifyBoard();
+}
+
+function editarAtividade(item) {
+  const modalEdit = document.createElement("section");
+  modalEdit.innerHTML = modalEditTask(item);
+  body.appendChild(modalEdit);
+
+  const btnEditTask = document.querySelector("#btn-edit-task");
+  const btnCloseModalEditNewTask = document.querySelector(
+    "#close-modal-edit-task"
+  );
+
+  const modalUpdateTask = document.querySelector(".edit-task-modal");
+  const UpdatedTaskTitle = document.querySelector("#edit-task-title");
+  const UpdatedTaskDate = document.querySelector("#edit-task-date");
+  const UpdatedTaskTag = document.querySelector("#edit-task-tag");
+  const btnUpdateTask = document.querySelector("#btn-update-task");
+  const btnCloseModalAddEditTask = document.querySelector(
+    "#close-modal-edit-task"
+  );
+  const tagAltissimo = document.querySelector("#altissimo");
+  const tagAlta = document.querySelector("#alta");
+  const tagNormal = document.querySelector("#normal");
+  const tagBaixa = document.querySelector("#baixa");
+
+  modalUpdateTask.id = "";
+
+  UpdatedTaskTitle.setAttribute("value", item.title);
+  UpdatedTaskDate.setAttribute("value", item.date);
+
+  console.log(item.tag);
+  if (item.tag == "Altíssimo") {
+    console.log("1");
+    console.log(item.tag);
+    tagAltissimo.setAttribute("selected", item.tag);
+  }
+  if (item.tag == "Alta") {
+    console.log("2");
+    console.log(item.tag);
+    tagAlta.setAttribute("selected", item.tag);
+  }
+  if (item.tag == "Normal") {
+    console.log("3");
+    console.log(item.tag);
+    tagNormal.setAttribute("selected", item.tag);
+  }
+  if (item.tag == "Baixa") {
+    console.log("4");
+    console.log(item.tag);
+    tagBaixa.setAttribute("selected", item.tag);
   }
 
-  if (targetElement.classList.contains("cancel-button")) {
-    const id = parentElement.id;
-    allTask = allTask.filter((item) => item.idTask !== id);
-    parentElement.remove()
-    verifyBoard();
-  }
-});
+  btnUpdateTask.addEventListener("click", (e) => {
+    allTask.map((task) => {
+      if (task.idTask == item.idTask) {
+        if (
+          UpdatedTaskTitle.value !== "" &&
+          UpdatedTaskDate.value !== "" &&
+          UpdatedTaskTag.value !== ""
+        ) {
+          task.title = UpdatedTaskTitle.value;
+          task.date = UpdatedTaskDate.value;
+          task.tag = UpdatedTaskTag.value;
+        } else {
+          alert("Preencha a atividade!");
+        }
+      }
+    });
+    salvarLista();
+    setTimeout(function () {
+      window.location.reload();
+    });
+  });
+
+  const clickCloseEditTaskModal = btnCloseModalAddEditTask.addEventListener(
+    "click",
+    () => {
+      modalUpdateTask.id = "closeModal";
+    }
+  );
+
+  // location.reload()
+}
+
+function salvarLista() {
+  let localAllTask = JSON.stringify(allTask);
+  localStorage.setItem("lista", localAllTask);
+}
+
+function baixarLista() {
+  let listaString = localStorage.getItem("lista");
+  return JSON.parse(listaString) || [];
+}
+
+const iniciarLista = (e) => {
+  allTask.map((item) => createBoard(item));
+  allTask.map((item) => {
+    if (item.done === true) {
+      const itemFinalizado = document.querySelector(`#item-${item.idTask}`);
+      itemFinalizado.classList.add("done");
+      console.log(item);
+    }
+  });
+};
+iniciarLista();

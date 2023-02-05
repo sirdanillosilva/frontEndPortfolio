@@ -20,16 +20,16 @@
     <h1>TO-DO LIST</h1>
 
     <section class="container flex">
-      <button class="btn-new-task">Add new task</button>
+      <button id="btn-add-task">Add new task</button>
     </section>
 
     <section id="task-container" class="container flex task-container">
       <!-- local do todo list -->
     </section>
 
-    <div id="closeModal" class="modalDialog">
+    <div id="closeModal" class="modalDialog add-task-modal">
       <div>
-        <a href="#close" title="Close" class="close">X</a>
+        <a id = "close-modal-add-task" title="Close" class="close">X</a>
         <h2>Add new task</h2>
         <form class="task-card flex">
           <input
@@ -41,24 +41,17 @@
           <input id="task-date" type="date" />
 
           <select id="task-tag">
-            <option>Altissima</option>
+            <option>Altíssima</option>
             <option>Alta</option>
             <option>Normal</option>
             <option>Baixa</option>
           </select>
 
-          <textarea
-            name=""
-            id="task-description"
-            cols="30"
-            rows="5"
-            placeholder="Deixa fluir as palavras aqui"
-          ></textarea>
           <button id="btn-create-task" type="submit">Adicionar</button>
         </form>
       </div>
-    </div>
-
+    </div>  
+    
     <script src="./src/js/index.js" type="module"></script>
   </body>
 </html>

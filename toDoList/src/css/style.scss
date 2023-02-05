@@ -98,8 +98,9 @@ h1 {
       width: 24px;
       text-decoration: none;
       font-weight: 600;
-      border-radius: 12px;
+      border-radius: 30px;
       box-shadow: 1px 1px 3px $gray;
+      cursor: pointer;
       &:hover { background: $pink;
       color: $gray; }
   }}
@@ -179,4 +180,7 @@ h1 {
         background-color: $white;
 
         }
+  .hard-disable-button{
+    pointer-events: none
+  }
 }
