@@ -1,6 +1,4 @@
 let allTask = baixarLista();
-let finishTask = [];
-let todoTask = [];
 
 import { Task } from "./Task.js";
 import { modalEditTask } from "./components/modalEditTask.js";
@@ -12,7 +10,6 @@ const modalAddTask = document.querySelector(".add-task-modal");
 const taskTitle = document.querySelector("#task-title");
 const taskDate = document.querySelector("#task-date");
 const taskTag = document.querySelector("#task-tag");
-const taskDescription = document.querySelector("#task-description");
 const btnTaskCreator = document.querySelector("#btn-create-task");
 
 const body = document.querySelector("body");
@@ -170,11 +167,6 @@ function editarAtividade(item) {
   modalEdit.innerHTML = modalEditTask(item);
   body.appendChild(modalEdit);
 
-  const btnEditTask = document.querySelector("#btn-edit-task");
-  const btnCloseModalEditNewTask = document.querySelector(
-    "#close-modal-edit-task"
-  );
-
   const modalUpdateTask = document.querySelector(".edit-task-modal");
   const UpdatedTaskTitle = document.querySelector("#edit-task-title");
   const UpdatedTaskDate = document.querySelector("#edit-task-date");
@@ -195,23 +187,15 @@ function editarAtividade(item) {
 
   console.log(item.tag);
   if (item.tag == "Altíssimo") {
-    console.log("1");
-    console.log(item.tag);
     tagAltissimo.setAttribute("selected", item.tag);
   }
   if (item.tag == "Alta") {
-    console.log("2");
-    console.log(item.tag);
     tagAlta.setAttribute("selected", item.tag);
   }
   if (item.tag == "Normal") {
-    console.log("3");
-    console.log(item.tag);
     tagNormal.setAttribute("selected", item.tag);
   }
   if (item.tag == "Baixa") {
-    console.log("4");
-    console.log(item.tag);
     tagBaixa.setAttribute("selected", item.tag);
   }
 
@@ -244,7 +228,6 @@ function editarAtividade(item) {
     }
   );
 
-  // location.reload()
 }
 
 function salvarLista() {
@@ -263,7 +246,6 @@ const iniciarLista = (e) => {
     if (item.done === true) {
       const itemFinalizado = document.querySelector(`#item-${item.idTask}`);
       itemFinalizado.classList.add("done");
-      console.log(item);
     }
   });
 };
